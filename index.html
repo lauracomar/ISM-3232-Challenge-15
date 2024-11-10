@@ -4,11 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Financial Portfolio Management System </title>
+    <title>Financial Portfolio Management System</title>
 </head>
 
 <body>
-    <script src="main.js"></script>
+    <h1>Financial Portfolio Management System</h1>
+    <script type="module">
+        // importing functions and classes
+        import { calculatePortfolioValue, getPortfolioAllocation } from './portfolio.js';
+        import { Transaction } from './transaction.js';
+
+
+        // initial portfolio value
+        console.log("Initial Portfolio Value:", calculatePortfolioValue());
+
+
+        // initial portfolio allocation
+        console.log("Initial Portfolio Allocation:", getPortfolioAllocation());
+
+
+        // buy 20 shares of CocaCola
+        const transaction1 = new Transaction(1, 'buy', 20);
+        transaction1.processTransaction();
+        console.log("20 shares of CocaCola bought");
+
+
+        // selling 50 shares of Tesla
+        const transaction2 = new Transaction(2, 'sell', 50);
+        transaction2.processTransaction();
+        console.log("50 shares of Tesla sold");
+
+
+        // selling 20 shares of Berkshire Hathaway
+        const transaction3 = new Transaction(3, 'sell', 20);
+        transaction3.processTransaction();
+        console.log("20 shares of Berkshire Hathaway sold");
+
+
+        // updated portfolio value after transactions
+        console.log("New Portfolio Value:", calculatePortfolioValue());
+
+
+        // updated portfolio allocation after transactions
+        console.log("New Portfolio Allocation:", getPortfolioAllocation());
+    </script>
+
+
 </body>
 
 </html>
